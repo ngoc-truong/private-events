@@ -11,8 +11,9 @@ In this app users can create events, invite other users and attend other events.
 - has_many :attended_events, through: :invitations
 - has_many :invitations, foreign_key: :attendee_id
 
-- username: string (unique)
-- password: string (unique)
+- name: string (unique)
+- email: string (unique)
+- password: string 
 
 ### Events Model
 - belongs_to :host, class_name: "User"
