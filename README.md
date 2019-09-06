@@ -26,7 +26,7 @@ In this app users can create events, invite other users and attend other events.
 
 ### Invitations Model
 - belongs_to :attendee, class_name: "User"
-- belongs_to :attended_event, class_name: "Post"
+- belongs_to :attended_event, class_name: "Event"
 
 - attendee_id: integer
 - attended_event_id: integer

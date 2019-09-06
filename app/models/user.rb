@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     # We want to access the token but not save it in the database (like the password with "has_secure_password")
+
     attr_accessor :remember_token 
     before_save { email.downcase! }
     validates :name,        presence: true, 
@@ -15,6 +16,7 @@ class User < ApplicationRecord
                             length: { minimum: 6 }
 
     has_secure_password
+    has_many :created_events, foreign_key: :creator_id, class_name: "Event"
 
 
     # Returns hash digest/encryption of the given string

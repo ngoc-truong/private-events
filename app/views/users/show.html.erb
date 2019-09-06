@@ -1,2 +1,8 @@
-<%= @user.name %>
-<%= @user.email %>
+<h1><%= @user.name %>'s Page</h1> 
+<p>Email: <%= @user.email %></p>
+
+<h1>Created Events</h1>
+
+<ul>
+    <%= render partial: "/events/event", collection: @user_events, as: :event %>
+</ul>
