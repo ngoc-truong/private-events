@@ -1,3 +1,4 @@
-<li>Date: <%= event.date.strftime("%B %d, %Y - %k:%M") %></li>
 <li>Location: <%= event.location %></li>
+<li>Date: <%= event.date.strftime("%B %d, %Y - %k:%M") %></li>
+<li><%= link_to "To the event", event_path(event) %></li>
 <p></p>

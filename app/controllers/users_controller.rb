@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+    def index 
+        @users = User.all
+    end
+
     def new 
         @user = User.new 
     end
@@ -16,7 +20,10 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id]) 
-        @user_events = Event.all.where(creator_id: params[:id])
+        @created_events = Event.all.where(creator_id: params[:id])
+        @attended_events = @user.attended_events
+        @upcoming_events = @attended_events.upcoming
+        @previous_events = @attended_events.previous
     end
 
     private 
